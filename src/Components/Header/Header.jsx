@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, LogoutBtn, Logo} from "../index"
+import {Container, LogoutBtn, Logo, Button} from "../index"
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -44,12 +44,18 @@ const Header = () => {
               <Logo width='70px'/>
             </Link>
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex ml-auto gap-5'>
             {
               navItems.map((item) => 
                 item.active && (
                   <li key={item.name}>
-                    <button className='' onClick={() => navigate(item.path)}>{item.name}</button>
+                    <Link to={item.path}>
+                    
+                    <Button className='bg-fuchsia-400/30 font-medium' onClick={() => {
+                      console.log(item.path);
+                      
+                      navigate(item.path)}}>{item.name}</Button>
+                      </Link>
                   </li>
                 )
               )

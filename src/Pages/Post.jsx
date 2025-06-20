@@ -26,7 +26,7 @@ export default function Post() {
     const deletePost = () => {
         databaseService.deletePost(post.$id).then((status) => {
             if (status) {
-                databaseService.deleteFile(post.featuredImage);
+                databaseService.deleteFile(post.featuredimage);
                 navigate("/");
             }
         });
@@ -36,20 +36,23 @@ export default function Post() {
         <div className="py-8">
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                    {console.log(post)
+                    }
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        
+                        src={databaseService.filePreview(post.featuredimage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl w-[60vw]"
                     />
 
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button  className="mr-3 bg-green-500">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button className="bg-red-500" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>

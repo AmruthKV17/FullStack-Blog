@@ -37,19 +37,20 @@ class AuthService{
 
     async getCurrentUser(){
         try {
-            return await this.account.get()
+            const user = await this.account.get()
+            return user || null
         } catch (error) {
             throw error;
         }
-        return null;
     }
 
     async logout(){
         try {
             await this.account.deleteSessions()
+            return true
         } catch (error) {
             console.log("Appwrite Service :: logout :: error",error);
-            ;
+            return false;
         }
     }
 }

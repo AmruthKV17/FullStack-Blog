@@ -21,7 +21,7 @@ const AllPosts = () => {
           {posts.map((post) => (
             // <PostCard $id={post.$id} {...post}/>
             <div key={post.$id} className="p-4 w-1/4">
-              <PostCard post={post} />
+              <PostCard {...post} />
             </div>
           ))}
         </div>

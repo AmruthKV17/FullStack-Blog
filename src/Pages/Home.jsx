@@ -9,7 +9,7 @@ const Home = () => {
         databaseService.listPosts()
         .then((posts) => {
             if (posts) {
-                setposts(posts)
+                setposts(posts.documents)
             }
         })
     },[])

@@ -3,15 +3,17 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../features/Auth/authSlice";
 import { Button, Logo, Input } from "./index";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import authService from "../Appwrite/auth";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const authStatus = useSelector((state) => state.auth.status)
   const [error, setError] = useState("");
   const { register, handleSubmit } = useForm();
+
 
   const login = async (data) => {
     setError("");
@@ -29,6 +31,8 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center w-full">
+      {console.log(authStatus)
+      }
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
