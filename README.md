@@ -1,13 +1,23 @@
-# React + Vite
+✍️ Real-Time Blog Platform with Appwrite & React
+A full-featured blog application where users can write rich content using a real-time editor, upload images, and manage their posts. Built with React, Redux Toolkit, and Appwrite, this app offers seamless content creation, viewing, and editing experiences.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features
+🔐 Authentication with Signup, Signin, and Signout
 
-Currently, two official plugins are available:
+📝 Real-Time Visual Blog Editor using TinyMCE
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🖼️ Image Upload to Appwrite Storage
 
-## Expanding the ESLint configuration
+🧾 Create, Read, Update, Delete (CRUD) blog posts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# FullStack-Blog
+🏠 Homepage showing all users' blog posts
+
+🙋‍♂️ My Posts section to manage your own content
+
+🔒 Protected Routes for authenticated access
+
+⚛️ State Management using Redux Toolkit
+
+🌐 Fully integrated with Appwrite for backend services
+
+📱 Responsive and user-friendly design
