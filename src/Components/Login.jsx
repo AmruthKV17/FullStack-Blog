@@ -16,6 +16,8 @@ const Login = () => {
 
 
   const login = async (data) => {
+    console.log(data);
+    
     setError("");
     try {
       const session = await authService.login(data);
@@ -34,7 +36,7 @@ const Login = () => {
       {console.log(authStatus)
       }
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-slate-900 text-white rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -45,7 +47,7 @@ const Login = () => {
           {" "}
           Sign in to your account
         </h2>
-        <p className="m-2 text-center text-base text-black/60">
+        <p className="m-2 text-center text-base text-white">
           Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
@@ -54,7 +56,7 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
-        {error && <p className="text-center text-red-600 mt-8">{error}</p>}
+        {error && <p className="text-center text-red-300 mt-8">{error}</p>}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
             <Input
@@ -79,7 +81,7 @@ const Login = () => {
                 minLength : 6
               })}
             />
-            <Button children="Sign Up" className="w-full" type="submit"/>
+            <Button children="Sign Up" className="w-full bg-fuchsia-200 text-fuchsia-600 cursor-pointer" type="submit"/>
           </div>
         </form>
       </div>

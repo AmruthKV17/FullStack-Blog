@@ -15,12 +15,12 @@ const Home = () => {
     },[])
   if (posts.length > 0) {
     return (
-      <div className='w-full py-8'>
+      <div className='w-full '>
         <Container>
-            <div className='flex flex-wrap'>
+            <div className='gap-2 columns-4'>
                 {
                     posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
+                        <div key={post.$id} className='w-full aspect-square mb-2'>
                             <PostCard {...post}/>
                         </div>
                     ))
@@ -31,7 +31,7 @@ const Home = () => {
     )
   }else{
     return <Container>
-        <h2>No posts Available</h2>
+        <h2>Log In to view posts!</h2>
     </Container>
   }
 }

@@ -30,7 +30,7 @@ function App() {
     
   }, [authStatus]);
   return loading ? <div className="min-h-screen flex flex-wrap justify-center ">Loading...</div> : 
-  <div className="min-h-screen flex flex-col  content-between bg-fuchsia-300/30">
+  <div className="min-h-screen flex flex-col  justify-between bg-zinc-400/40">
     <Header/>
     <main>
       <Outlet/>

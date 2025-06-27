@@ -13,12 +13,13 @@ class AuthService{
         this.account = new Account(this.client);
     }
 
-    async createAccount({email,password,name}){
+    async createAccount({email,password,fullname}){
         try {
-            const userAccount = await this.account.create(ID.unique() ,email,password,name)
+            const userAccount = await this.account.create(ID.unique() ,email,password,fullname)
+            
             if (userAccount) {
-                // Call another method for user direct login
-                return this.login(email,password)
+                // Call another method for user direct login   
+                return await this.login({email,password})
             } else {
                 return userAccount;
             }

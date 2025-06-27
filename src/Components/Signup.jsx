@@ -16,6 +16,8 @@ const Signup = () => {
         seterror("")
         try {
             const userData = await authService.createAccount(data);
+            console.log(userData);
+            
             if(userData){
                 const LoggedinData = await authService.getCurrentUser();
                 if (LoggedinData) dispatch(authLogin(userData));
@@ -29,17 +31,16 @@ const Signup = () => {
     
   return (
     <div className='flex items-center justify-center'>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-lg  bg-slate-900 text-white rounded-xl p-10 border border-black/10`}>
             <div className="mb-2 flex justify-center">
                 <span className="inline-block w-full max-w-[100px]">
                     <Logo width="100%" />
                 </span>
             </div>
             <h2 className="text-center text-2xl font-bold leading-tight">
-                {" "}
                 Sign Up to create your Account
             </h2>
-            <p className="m-2 text-center text-base text-black/60">
+            <p className="m-2 text-center text-base ">
                 Already have any an account?&nbsp;
                 <Link
                     to="/login"
@@ -48,7 +49,7 @@ const Signup = () => {
                 Sign In
                 </Link>
             </p>
-            {error && <p className='text-center text-red-600 mt-8'>{error}</p>}
+            {error && <p className='text-center text-red-400 mt-8'>{error}</p>}
 
             <form onSubmit={handleSubmit(signup)}>
                 <div className='space-y-5'>
@@ -86,11 +87,11 @@ const Signup = () => {
                         }
                         
                     />
-                    <Button
+                    <button
                         type='submit'
-                        children="Sign Up"
-                        className='w-full'
-                    />
+                        // children="Sign Up"
+                        className='w-full bg-fuchsia-200 text-fuchsia-700'
+                    >Sign Up</button>
                 </div>
                 
             </form>
