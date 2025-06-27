@@ -1,4 +1,4 @@
-
+# ✍️ Real-Time Blog Platform with Appwrite & React
 A full-featured blog application where users can write rich content using a real-time editor, upload images, and manage their posts. Built with React, Redux Toolkit, and Appwrite, this app offers seamless content creation, viewing, and editing experiences.
 
 🚀 Features
